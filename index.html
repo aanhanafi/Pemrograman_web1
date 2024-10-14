@@ -3,77 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
+    <title>Kalkulator Sederhana</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <div id="mobile-menu">☰</div> <!-- Hamburger Menu -->
-        <nav>
-            <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul id="menu" class="hidden">
-                <li><a href="javascript:void(0);" onclick="scrollToSection('home')">Home</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('about')">About</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('projects')">Projects</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('contact')">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <img src="WhatsApp Image 2024-10-14 at 23.59.06_c753f3d3.jpg" alt="Profile Photo" class="profile-img">
-        <h1>Hello, I'm Nur Hanafi Manap</h1>
-        <p></p>
-        <button onclick="scrollToSection('about')">Selanjutnya..</button>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Halo! Perkenalkan nama saya Nur Hanafi Manap, Saya seorang mahasiswa yang memiliki ketertarikan di dunia teknologi dan pengembangan web. 
-            Saya selalu tertarik dengan cara teknologi dapat mempermudah hidup dan membuka peluang baru. 
-            Saya juga menikmati menulis artikel, 
-            baik untuk keperluan pribadi maupun untuk berbagi wawasan dengan orang lain. 
-            Menulis memberikan saya kesempatan untuk menyampaikan ide-ide dan mengolah informasi dengan lebih terstruktur.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <br>
-        <div class="project-list">
-            <div class="project">
-                <h3>Form Login</h3>
-                <a href="file:///D:/Visual%20Studio%20code/Semester%205/Pemrograman%20web%201/form%20login%201/login.html" target="_blank">Lihat Project</a>
-            </div>
-
-            <div class="project">
-                <h3>Kalkulator</h3>
-                <a href="file:///D:/Visual%20Studio%20code/Semester%205/Pemrograman%20web%201/Kalkulator/index.html" target="_blank">Lihat Project</a>
-            </div>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
         </div>
-    </section>
-
-    <br>
-    <br>
-    <br>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <ul>
-            <li>Email: <a href="mailto:aanhanafi50@gmail.com">aanhanafi50@gmail.com</a></li>
-        </ul>
-    </section>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
