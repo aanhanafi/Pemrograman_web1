@@ -1,0 +1,248 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Menyembunyikan scrollbar vertikal */
+}
+
+.hero {
+    text-align: center; /* Mengatur agar konten terpusat */
+    padding: 40px; /* Menambah padding */
+}
+
+.profile-img {
+    width: 120px; /* Set ukuran lebar gambar profil */
+    height: 120px; /* Set ukuran tinggi gambar profil (sebaiknya sama dengan lebar) */
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    object-fit: cover; /* Memastikan gambar terisi tanpa distorsi */
+    margin-bottom: 20px; /* Memberikan ruang di bawah gambar */
+}
+
+/* Header Styles */
+header {
+    background-color: #333; /* Warna latar belakang header */
+    padding: 1rem; /* Padding pada header */
+    position: sticky; /* Membuat header tetap di atas saat scroll */
+    top: 0; /* Posisi atas */
+    width: 100%; /* Lebar penuh */
+    z-index: 1000; /* Menjaga agar header berada di atas konten lain */
+}
+
+header ul {
+    list-style-type: none; /* Menghilangkan bullet pada list */
+    display: flex; /* Mengatur list agar horizontal */
+    justify-content: center; /* Mengatur konten agar terpusat */
+    margin: 0; /* Menghilangkan margin */
+    padding: 0; /* Menghilangkan padding */
+}
+
+header ul li {
+    margin: 0 1rem; /* Memberikan jarak antar item menu */
+}
+
+header ul li a {
+    color: white; /* Warna teks tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 1.2rem; /* Ukuran font tautan */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh; /* Mengatur tinggi section hero penuh layar */
+    background: url('Screenshot 2024-07-20 154759.png') no-repeat center center/cover; /* Gambar latar belakang */
+    display: flex; /* Mengatur konten di dalamnya menjadi flexbox */
+    flex-direction: column; /* Mengatur arah konten secara vertikal */
+    justify-content: center; /* Mengatur agar konten terpusat secara vertikal */
+    align-items: center; /* Mengatur agar konten terpusat secara horizontal */
+    color: white; /* Warna teks */
+    text-align: center; /* Mengatur teks agar terpusat */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Ukuran font untuk judul */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Ukuran font untuk paragraf */
+}
+
+.hero button {
+    padding: 1rem 2rem; /* Padding tombol */
+    font-size: 1rem; /* Ukuran font tombol */
+    background-color: #28a745; /* Warna latar tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghilangkan border tombol */
+    cursor: pointer; /* Menunjukkan bahwa ini adalah elemen yang dapat diklik */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+}
+
+/* About Section */
+.about {
+    padding: 4rem; /* Padding di sekitar section */
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Mengatur arah konten secara vertikal */
+    justify-content: center; /* Mengatur agar konten terpusat secara vertikal */
+    align-items: center; /* Mengatur agar konten terpusat secara horizontal */
+    text-align: center; /* Mengatur teks agar terpusat */
+    background-color: #f4f4f4; /* Warna latar belakang section */
+    height: 100vh; /* Tinggi section penuh layar */
+}
+
+.about h2 {
+    margin-bottom: 1rem; /* Margin bawah judul */
+    font-size: 2rem; /* Ukuran font judul */
+}
+
+.about p {
+    max-width: 600px; /* Membatasi lebar paragraf */
+    margin-bottom: 1rem; /* Margin bawah paragraf */
+    font-size: 1.2rem; /* Ukuran font paragraf */
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem; /* Padding di sekitar section */
+    text-align: center; /* Mengatur teks agar terpusat */
+}
+
+.projects .project-list {
+    display: flex; /* Menggunakan flexbox untuk daftar proyek */
+    justify-content: space-around; /* Mengatur jarak antar proyek */
+    flex-wrap: wrap; /* Membuat proyek membungkus ke baris baru */
+}
+
+.project {
+    width: 30%; /* Lebar proyek */
+    background-color: #e9ecef; /* Warna latar belakang proyek */
+    padding: 1rem; /* Padding di dalam proyek */
+    margin: 1rem 0; /* Margin vertikal pada proyek */
+    border-radius: 5px; /* Membuat sudut proyek melengkung */
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem; /* Padding di sekitar section */
+    text-align: center; /* Mengatur teks agar terpusat */
+    background-color: #333; /* Warna latar belakang section */
+    color: white; /* Warna teks */
+}
+
+.contact ul {
+    list-style-type: none; /* Menghilangkan bullet pada list */
+}
+
+.contact ul li {
+    margin-bottom: 1rem; /* Margin bawah pada item list */
+}
+
+/* Responsive Design */
+/* Small screens (600px and below) */
+@media (max-width: 600px) {
+    header ul {
+        flex-direction: column; /* Mengatur menu menjadi vertikal pada layar kecil */
+    }
+
+    header ul li {
+        margin: 0.5rem 0; /* Margin antar item menu */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Mengurangi ukuran font judul pada layar kecil */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Mengurangi ukuran font paragraf pada layar kecil */
+    }
+
+    .projects .project-list {
+        flex-direction: column; /* Mengatur daftar proyek menjadi vertikal */
+    }
+
+    .project {
+        width: 100%; /* Lebar proyek penuh pada layar kecil */
+    }
+
+    .about, .projects, .contact {
+        padding: 2rem; /* Mengurangi padding pada section di layar kecil */
+    }
+}
+
+/* Medium screens (768px and below) */
+@media (max-width: 768px) {
+    .projects .project-list {
+        flex-direction: column; /* Mengatur daftar proyek menjadi vertikal */
+        align-items: center; /* Mengatur agar proyek terpusat */
+    }
+
+    .project {
+        width: 80%; /* Lebar proyek pada layar sedang */
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Ukuran font judul pada layar sedang */
+    }
+
+    .hero p {
+        font-size: 1.4rem; /* Ukuran font paragraf pada layar sedang */
+    }
+}
+
+
+/* CSS untuk menampilkan hamburger di layar kecil */
+#mobile-menu {
+    display: none; /* Sembunyikan di layar besar */
+    font-size: 2rem;
+    cursor: pointer;
+    color: white; /* Sesuaikan warna sesuai desain */
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* Tampilkan hamburger menu di layar kecil */
+@media (max-width: 768px) {
+    #mobile-menu {
+        display: block; /* Tampilkan hamburger di layar kecil */
+    }
+
+    header ul {
+        display: none; /* Sembunyikan menu pada layar kecil */
+        flex-direction: column; /* Mengatur agar item navigasi vertikal */
+        position: absolute;
+        top: 100%; /* Tempatkan di bawah header */
+        left: 0;
+        right: 0;
+        background-color: #333; /* Sesuaikan warna background */
+        padding: 1rem;
+    }
+
+    /* Tampilkan menu ketika 'show' class ditambahkan */
+    header ul.show {
+        display: flex;
+    }
+
+    header ul li {
+        margin: 2rem 0; /* Memberikan margin antar item */
+    }
+}
+
+.burger-menu {
+    display: none; /* Sembunyikan burger pada layar besar */
+    position: absolute; /* Mengatur posisi relatif terhadap header */
+    left: 10px; /* Letakkan di sebelah kiri */
+    top: 50%; /* Posisi tengah vertikal */
+    transform: translateY(-50%); /* Pindahkan setengah tinggi ikon untuk penyesuaian */
+    font-size: 24px; /* Sesuaikan ukuran ikon */
+    color: white; /* Warna burger, pastikan kontras dengan background */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
+
+@media (max-width:800px) {
+    .burger-menu {
+        display: block; /* Tampilkan burger pada layar kecil */
+    }
+}
+
+
