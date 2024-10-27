@@ -245,4 +245,57 @@ header ul li a {
     }
 }
 
+/* Certificates Section */
+.certificates {
+    padding: 4rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
 
+.certificates .certificate-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.certificate {
+    width: 20%;
+    background-color: #e9ecef;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.certificates {
+    padding: 4rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.certificate-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.certificate {
+    width: 20%;
+    margin: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.certificate img {
+    width: 100%; /* Makes image responsive within container */
+    max-width: 120px; /* Adjust as needed */
+    border-radius: 5px; /* Slightly rounded corners */
+    margin-bottom: 0.5rem;
+}
+
+.certificate p {
+    font-size: 1rem;
+    color: #333;
+}
