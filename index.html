@@ -3,106 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
+    <title>Creative Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <nav>
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
-    <!-- Header -->
-    <header>
-        <div id="mobile-menu">☰</div> <!-- Hamburger Menu -->
-        <nav>
-            <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul id="menu" class="hidden">
-                <li><a href="javascript:void(0);" onclick="scrollToSection('home')">Home</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('about')">About</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('projects')">Projects</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('certificates')">Certificates</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('contact')">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <img src="WhatsApp Image 2024-10-14 at 23.59.06_c753f3d3.jpg" alt="Profile Photo" class="profile-img">
-        <h1>Hello, Saya Nur Hanafi Manap</h1>
-        <p></p>
-        <button onclick="scrollToSection('about')">Tentang saya..</button>
+        <div class="hero-content">
+            <div class="profile-image">
+                <!-- Profil -->
+                <img src="img/WhatsApp Image 2024-10-14 at 23.59.06_c753f3d3.jpg" alt="Profile Picture">
+            </div>
+            <h1>Hello, Nama Saya Nur Hanafi</h1>
+            <p>Selamat Datang Di Portofolio Saya</p>
+            <a href="#about" class="cta-button">Explore</a>
+        </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>Halo! Perkenalkan nama saya Nur Hanafi Manap, Saya seorang mahasiswa yang memiliki ketertarikan di dunia pemrograman dan pengembangan web. 
-            Saya selalu tertarik dengan cara program dapat mempermudah hidup dan membuka peluang baru. 
-            Saya juga menikmati menulis artikel, 
-            baik untuk keperluan pribadi maupun untuk berbagi wawasan dengan orang lain. 
-            Menulis memberikan saya kesempatan untuk menyampaikan ide-ide dan mengolah informasi dengan lebih terstruktur.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <br>
-        <div class="project-list">
-            <div class="project">
-                <h3>Form Login</h3>
-                <a href="https://aanhanafi.github.io/form_login2/" target="_blank">Lihat Project</a>
-            </div>
-            <div class="project">
-                <h3>Kalkulator</h3>
-                <a href="https://aanhanafi.github.io/kalkulator2/" target="_blank">Lihat Project</a>
-            </div>
-            <div class="project">
-                <h3>Dashboard E-Commerce</h3>
-                <a href="https://aanhanafi.github.io/dashboard_e-commerce/" target="_blank">Lihat Project</a>
-            </div>
-            <div class="project">
-                <h3>Game Tetris</h3>
-                <a href="https://aanhanafi.github.io/Game_Tetris/" target="_blank">Lihat Project</a>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Seorang pemimpi yang selalu mencari makna dalam setiap hal.</p>
+                <p>Ketertarikan saya meliputi:</p>
+                <ul>
+                    <li>Berimajinasi dan mengeksplorasi ide-ide baru</li>
+                    <li>Menggambar dan menulis sebagai bentuk ekspresi</li>
+                    <li>Mencari makna dalam setiap pengalaman</li>
+                    <li>Sejarah, Politik, Ekonomi, Pertaninan, Tata letak Kota, Sepak Bola(Timnas)</li>
+                </ul>
+                
+                <p>Saya adalah penjelajah dalam dunia ide, selalu mencari makna di balik setiap langkah. Dalam perjalanan ini, saya percaya bahwa kreativitas adalah cahaya yang menerangi jalan menuju Keuntungan.
+                     Saya menyelami teknologi, bisnis, dan sejarah dengan rasa ingin tahu yang tak pernah padam, sambil terus membentuk diri untuk menjadi lebih baik—baik dalam pikiran maupun tindakan. 
+                     Setiap proyek adalah cerita baru yang ingin saya ceritakan, sebuah kontribusi kecil untuk dunia yang lebih besar.</p>      
             </div>
         </div>
     </section>
 
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <a href="https://aanhanafi.github.io/form_login2/" class="project-card" target="_blank">
+                <img src="img/Screenshot 2024-12-01 143100.png" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Form Login</p>
+            </a>
+            <a href="https://aanhanafi.github.io/kalkulator2/" class="project-card" target="_blank">
+                <img src="img/Screenshot 2024-12-07 231520.png" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Kalkulator</p>
+            </a>
+            <a href="https://aanhanafi.github.io/dashboard_e-commerce/" class="project-card" target="_blank">
+                <img src="img/Screenshot 2024-12-07 233005.png" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Dashboard E-Commerce</p>
+            </a>
+            <a href="https://aanhanafi.github.io/Game_Tetris/" class="project-card" target="_blank">
+                <img src="img/Screenshot 2024-12-07 231725.png" alt="Project 4">
+                <h3>Project 4</h3>
+                <p>Game Tetris</p>
+            </a>
+        </div>
+    </section>
 
-    <!-- Certificates Section -->
-<section id="certificates" class="certificates">
-    <h2>Certificates</h2>
-    <div class="certificate-list">
-        <a href="https://www.sololearn.com/certificates/CC-T3K9TKYC" target="_blank" class="certificate">
-            <img src="./images/443b3e58-389e-4883-95dc-02fd3204c460.jpg" alt="HTML Certificate">
-            <p>Introduction to HTML</p>
-        </a>
-        <a href="https://www.sololearn.com/certificates/CC-RQRAMRWL" target="_blank" class="certificate">
-            <img src="./images/b56643bc-fd10-4269-86a8-0515dcf90d5c.jpg" alt="CSS Certificate">
-            <p>Introduction to CSS</p>
-        </a>
-        <a href="https://www.sololearn.com/certificates/CC-GEVMKUBQ" target="_blank" class="certificate">
-            <img src="./images/1a575bd7-072c-4f4d-b6cc-f832a92d0f92.jpg" alt="JavaScript Certificate">
-            <p>Introduction to JavaScript</p>
-        </a>
-        <a href="https://www.sololearn.com/certificates/CC-QTJFGONW" target="_blank" class="certificate">
-            <img src="./images/3fdab524-3010-4442-b8f0-a4ef8d95cb99.jpg" alt="JavaScript Intermediate Certificate">
-            <p>JavaScript Intermediate</p>
-        </a>
-    </div>
-</section>
+    <section id="certificates" class="certificates">
+        <h2>Certificates</h2>
+        <div class="cert-grid">
+            <a href="https://www.sololearn.com/certificates/CC-T3K9TKYC" class="cert-card" target="_blank">
+                <img src="images/443b3e58-389e-4883-95dc-02fd3204c460.jpg" alt="Certificate 1">
+                <h3>Introduction to HTML</h3>
+                <p>Certificates Sololearn</p>
+            </a>
+            <a href="https://www.sololearn.com/certificates/CC-RQRAMRWL" class="cert-card" target="_blank">
+                <img src="images/b56643bc-fd10-4269-86a8-0515dcf90d5c.jpg" alt="Certificate 2">
+                <h3>Introduction to CSS</h3>
+                <p>Certificates Sololearn</p>
+            </a>
+            <a href="https://www.sololearn.com/certificates/CC-GEVMKUBQ" class="cert-card" target="_blank">
+                <img src="images/1a575bd7-072c-4f4d-b6cc-f832a92d0f92.jpg" alt="Certificate 3">
+                <h3>Introduction to JavaScript</h3>
+                <p>Certificates Sololearn</p>
+            </a>
+            <a href="https://www.sololearn.com/certificates/CC-QTJFGONW" class="cert-card" target="_blank">
+                <img src="images/3fdab524-3010-4442-b8f0-a4ef8d95cb99.jpg" alt="Certificate 4">
+                <h3>JavaScript Intermediate</h3>
+                <p>Certificates Sololearn</p>
+            </a>
+        </div>
+    </section>
 
-
-
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
-        <ul>
-            <li>Email : <a href="mailto:aanhanafi50@gmail.com">aanhanafi50@gmail.com</a></li>
-        </ul>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:aanhanafi50@gmail.com">aanhanafi50@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="https://wa.me/6283803275552" target="_blank">+62 838 0327 5552</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>
+                    <p>Universitas Pamulang Kampus 2 (UNPAM Viktor)</p>
+                </div>
+            </div>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <!-- Embed Map Section -->
+        <div class="map-container">
+            <h3>Our Location</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9346575563983!2d106.6908534!3d-6.3460941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sUniversitas%20Pamulang%20Kampus%202%20(UNPAM%20Viktor)!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </section>
+    
+    
+    
+    
+
+    <section class="gallery">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="illustration">Illustration</button>
+            <button class="filter-btn" data-category="graphic-design">Graphic Design</button>
+            <button class="filter-btn" data-category="photography">Photography</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="illustration">
+                <img src="img/lorong.png" alt="Illustration">
+                <p>Illustration 1</p>
+            </div>
+            <div class="gallery-item" data-category="graphic-design">
+                <img src="graphic1.jpg" alt="Graphic Design">
+                <p>Graphic Design 1</p>
+            </div>
+            <div class="gallery-item" data-category="photography">
+                <img src="photo1.jpg" alt="Photography">
+                <p>Photography 1</p>
+            </div>
+            <div class="gallery-item" data-category="illustration">
+                <img src="illustration2.jpg" alt="Illustration">
+                <p>Illustration 2</p>
+            </div>
+            <div class="gallery-item" data-category="graphic-design">
+                <img src="graphic2.jpg" alt="Graphic Design">
+                <p>Graphic Design 2</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Portfolio. Nur Hanafi Manap.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
