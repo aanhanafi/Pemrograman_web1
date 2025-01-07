@@ -1,301 +1,524 @@
 /* General Styles */
-html, body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Menyembunyikan scrollbar vertikal */
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #2c3e50;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Profile Image - New */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid transparent; /* Awalnya transparan */
+    background: linear-gradient(120deg, #ff7eb3, #ff758c, #7851a9, #24243e);
+    background-size: 200% 200%;
+    animation: gradient-border 4s infinite alternate; /* Animasi gradasi */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Animasi smooth muncul */
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.8); /* Awalnya lebih kecil */
+}
+
+.profile-image.show {
+    opacity: 1; /* Muncul sepenuhnya */
+    transform: scale(1); /* Kembali ke ukuran normal */
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Animasi Gradasi Border */
+@keyframes gradient-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 
 .hero {
-    text-align: center; /* Mengatur agar konten terpusat */
-    padding: 40px; /* Menambah padding */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(120deg, #0a0a0f 0%, #1b1b2f 50%, #24243e 100%);
+    border-radius: 10px 10px 0 0;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.275);
+    animation: gradient-move 6s infinite alternate; /* Tambahkan animasi */
+    background-size: 200% 200%; /* Membuat animasi terlihat halus */
 }
 
-.profile-img {
-    width: 120px; /* Set ukuran lebar gambar profil */
-    height: 120px; /* Set ukuran tinggi gambar profil (sebaiknya sama dengan lebar) */
-    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
-    object-fit: cover; /* Memastikan gambar terisi tanpa distorsi */
-    margin-bottom: 20px; /* Memberikan ruang di bawah gambar */
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
-/* Header Styles */
-header {
-    background-color: #333; /* Warna latar belakang header */
-    padding: 1rem; /* Padding pada header */
-    position: sticky; /* Membuat header tetap di atas saat scroll */
-    top: 0; /* Posisi atas */
-    width: 100%; /* Lebar penuh */
-    z-index: 1000; /* Menjaga agar header berada di atas konten lain */
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-header ul {
-    list-style-type: none; /* Menghilangkan bullet pada list */
-    display: flex; /* Mengatur list agar horizontal */
-    justify-content: center; /* Mengatur konten agar terpusat */
-    margin: 0; /* Menghilangkan margin */
-    padding: 0; /* Menghilangkan padding */
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
-header ul li {
-    margin: 0 1rem; /* Memberikan jarak antar item menu */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: white;
+    color: #764ba2;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
-header ul li a {
-    color: white; /* Warna teks tautan */
-    text-decoration: none; /* Menghilangkan garis bawah */
-    font-size: 1.2rem; /* Ukuran font tautan */
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh; /* Mengatur tinggi section hero penuh layar */
-    background: url('Screenshot 2024-07-20 154759.png') no-repeat center center/cover; /* Gambar latar belakang */
-    display: flex; /* Mengatur konten di dalamnya menjadi flexbox */
-    flex-direction: column; /* Mengatur arah konten secara vertikal */
-    justify-content: center; /* Mengatur agar konten terpusat secara vertikal */
-    align-items: center; /* Mengatur agar konten terpusat secara horizontal */
-    color: white; /* Warna teks */
-    text-align: center; /* Mengatur teks agar terpusat */
-}
-
-.hero h1 {
-    font-size: 3rem; /* Ukuran font untuk judul */
-}
-
-.hero p {
-    font-size: 1.5rem; /* Ukuran font untuk paragraf */
-}
-
-.hero button {
-    padding: 1rem 2rem; /* Padding tombol */
-    font-size: 1rem; /* Ukuran font tombol */
-    background-color: #28a745; /* Warna latar tombol */
-    color: white; /* Warna teks tombol */
-    border: none; /* Menghilangkan border tombol */
-    cursor: pointer; /* Menunjukkan bahwa ini adalah elemen yang dapat diklik */
-    border-radius: 5px; /* Membuat sudut tombol melengkung */
+.cta-button:hover {
+    transform: translateY(-3px);
 }
 
 /* About Section */
 .about {
-    padding: 4rem; /* Padding di sekitar section */
-    display: flex; /* Menggunakan flexbox */
-    flex-direction: column; /* Mengatur arah konten secara vertikal */
-    justify-content: center; /* Mengatur agar konten terpusat secara vertikal */
-    align-items: center; /* Mengatur agar konten terpusat secara horizontal */
-    text-align: center; /* Mengatur teks agar terpusat */
-    background-color: #f4f4f4; /* Warna latar belakang section */
-    height: 100vh; /* Tinggi section penuh layar */
+    padding: 100px 50px;
+    background-color: #f8f9fa;
 }
 
 .about h2 {
-    margin-bottom: 1rem; /* Margin bawah judul */
-    font-size: 2rem; /* Ukuran font judul */
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
 }
 
-.about p {
-    max-width: 600px; /* Membatasi lebar paragraf */
-    margin-bottom: 1rem; /* Margin bawah paragraf */
-    font-size: 1.2rem; /* Ukuran font paragraf */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text ul {
+    list-style-position: inside;
+    margin-bottom: 20px;
 }
 
 /* Projects Section */
 .projects {
-    padding: 4rem; /* Padding di sekitar section */
-    text-align: center; /* Mengatur teks agar terpusat */
+    padding: 100px 50px;
 }
 
-.projects .project-list {
-    display: flex; /* Menggunakan flexbox untuk daftar proyek */
-    justify-content: space-around; /* Mengatur jarak antar proyek */
-    flex-wrap: wrap; /* Membuat proyek membungkus ke baris baru */
-}
-
-.project {
-    width: 30%; /* Lebar proyek */
-    background-color: #e9ecef; /* Warna latar belakang proyek */
-    padding: 1rem; /* Padding di dalam proyek */
-    margin: 1rem 0; /* Margin vertikal pada proyek */
-    border-radius: 5px; /* Membuat sudut proyek melengkung */
-}
-
-/* Contact Section */
-.contact {
-    padding: 4rem; /* Padding di sekitar section */
-    text-align: center; /* Mengatur teks agar terpusat */
-    background-color: #333; /* Warna latar belakang section */
-    color: white; /* Warna teks */
-}
-
-.contact ul {
-    list-style-type: none; /* Menghilangkan bullet pada list */
-}
-
-.contact ul li {
-    margin-bottom: 1rem; /* Margin bawah pada item list */
-}
-
-/* Responsive Design */
-/* Small screens (600px and below) */
-@media (max-width: 600px) {
-    header ul {
-        flex-direction: column; /* Mengatur menu menjadi vertikal pada layar kecil */
-    }
-
-    header ul li {
-        margin: 0.5rem 0; /* Margin antar item menu */
-    }
-
-    .hero h1 {
-        font-size: 2.5rem; /* Mengurangi ukuran font judul pada layar kecil */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Mengurangi ukuran font paragraf pada layar kecil */
-    }
-
-    .projects .project-list {
-        flex-direction: column; /* Mengatur daftar proyek menjadi vertikal */
-    }
-
-    .project {
-        width: 100%; /* Lebar proyek penuh pada layar kecil */
-    }
-
-    .about, .projects, .contact {
-        padding: 2rem; /* Mengurangi padding pada section di layar kecil */
-    }
-}
-
-/* Medium screens (768px and below) */
-@media (max-width: 768px) {
-    .projects .project-list {
-        flex-direction: column; /* Mengatur daftar proyek menjadi vertikal */
-        align-items: center; /* Mengatur agar proyek terpusat */
-    }
-
-    .project {
-        width: 80%; /* Lebar proyek pada layar sedang */
-    }
-
-    .hero h1 {
-        font-size: 3rem; /* Ukuran font judul pada layar sedang */
-    }
-
-    .hero p {
-        font-size: 1.4rem; /* Ukuran font paragraf pada layar sedang */
-    }
-}
-
-
-/* CSS untuk menampilkan hamburger di layar kecil */
-#mobile-menu {
-    display: none; /* Sembunyikan di layar besar */
-    font-size: 2rem;
-    cursor: pointer;
-    color: white; /* Sesuaikan warna sesuai desain */
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-}
-
-/* Tampilkan hamburger menu di layar kecil */
-@media (max-width: 768px) {
-    #mobile-menu {
-        display: block; /* Tampilkan hamburger di layar kecil */
-    }
-
-    header ul {
-        display: none; /* Sembunyikan menu pada layar kecil */
-        flex-direction: column; /* Mengatur agar item navigasi vertikal */
-        position: absolute;
-        top: 100%; /* Tempatkan di bawah header */
-        left: 0;
-        right: 0;
-        background-color: #333; /* Sesuaikan warna background */
-        padding: 1rem;
-    }
-
-    /* Tampilkan menu ketika 'show' class ditambahkan */
-    header ul.show {
-        display: flex;
-    }
-
-    header ul li {
-        margin: 2rem 0; /* Memberikan margin antar item */
-    }
-}
-
-.burger-menu {
-    display: none; /* Sembunyikan burger pada layar besar */
-    position: absolute; /* Mengatur posisi relatif terhadap header */
-    left: 10px; /* Letakkan di sebelah kiri */
-    top: 50%; /* Posisi tengah vertikal */
-    transform: translateY(-50%); /* Pindahkan setengah tinggi ikon untuk penyesuaian */
-    font-size: 24px; /* Sesuaikan ukuran ikon */
-    color: white; /* Warna burger, pastikan kontras dengan background */
-    cursor: pointer; /* Mengubah kursor saat hover */
-}
-
-@media (max-width:800px) {
-    .burger-menu {
-        display: block; /* Tampilkan burger pada layar kecil */
-    }
-}
-
-/* Certificates Section */
-.certificates {
-    padding: 4rem;
+.projects h2 {
     text-align: center;
-    background-color: #f9f9f9;
+    margin-bottom: 50px;
+    color: #2c3e50;
 }
 
-.certificates .certificate-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.certificate {
-    width: 20%;
-    background-color: #e9ecef;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5px;
-    text-align: center;
-}
-
-
-.certificates {
-    padding: 4rem;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.certificate-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.certificate {
-    width: 20%;
-    margin: 1rem;
-    text-align: center;
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     text-decoration: none;
     color: inherit;
 }
 
-.certificate img {
-    width: 100%; /* Makes image responsive within container */
-    max-width: 120px; /* Adjust as needed */
-    border-radius: 5px; /* Slightly rounded corners */
-    margin-bottom: 0.5rem;
+.project-card:hover {
+    transform: translateY(-10px);
 }
 
-.certificate p {
-    font-size: 1rem;
-    color: #333;
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
+
+.project-card h3 {
+    padding: 20px 20px 10px;
+    color: #2c3e50;
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+    color: #666;
+}
+
+/* Certificates Section */
+.certificates {
+    padding: 100px 50px;
+    background-color: #f8f9fa;
+}
+
+.certificates h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.cert-card h3 {
+    padding: 15px 15px 5px;
+    color: #2c3e50;
+}
+
+.cert-card p {
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 50px;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #764ba2;
+}
+.contact-item a {
+    text-decoration: none; /* Hilangkan garis bawah link */
+    color: inherit; /* Gunakan warna default teks */
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #764ba2; /* Ubah warna ketika di-hover */
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#contact-form button {
+    padding: 15px;
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #663399;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 20px;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        transition: right 0.5s ease;
+        padding-top: 50px;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about, .projects, .certificates, .contact {
+        padding: 80px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .project-grid, .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .cert-card img {
+        height: 140px;
+    }
+}
+
+/* Animation for mobile menu */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*filter gambar*/
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: calc(33.333% - 20px);
+    text-align: center;
+    display: block;
+}
+
+
+/*Maps*/
+.map-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
